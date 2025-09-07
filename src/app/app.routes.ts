@@ -3,14 +3,9 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./Pages/home/home.component').then((m) => m.HomeComponent),
+  
     children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full'
-      },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
       {
         path: 'home',
         loadComponent: () =>
@@ -19,17 +14,23 @@ export const routes: Routes = [
       {
         path: 'products',
         loadComponent: () =>
-          import('./Pages/productss/products/products.component').then((m) => m.ProductsComponent)
+          import('./Pages/productss/products/products.component').then(
+            (m) => m.ProductsComponent
+          )
       },
       {
         path: 'products/:id',
         loadComponent: () =>
-          import('./Pages/productss/productsdetails/productsdetails.component').then((m) => m.ProductsdetailsComponent)
+          import('./Pages/productss/productsdetails/productsdetails.component').then(
+            (m) => m.ProductsdetailsComponent
+          )
       },
       {
         path: 'category',
         loadComponent: () =>
-          import('./Pages/categoris/categoris.component').then((m) => m.CategorisComponent)
+          import('./Pages/categoris/categoris.component').then(
+            (m) => m.CategorisComponent
+          )
       },
       {
         path: 'brands',
@@ -39,20 +40,19 @@ export const routes: Routes = [
       {
         path: 'wishlist',
         loadComponent: () =>
-          import('./Pages/whishlist/whishlist.component').then((m) => m.WhishlistComponent)
+          import('./Pages/whishlist/whishlist.component').then(
+            (m) => m.WhishlistComponent
+          )
       }
     ]
   },
+  // Auth Routes
   {
-    path: '',
+    path: 'auth',
     loadComponent: () =>
       import('./Pages/Auth/auth/auth.component').then((m) => m.AuthComponent),
     children: [
-      {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-      },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
         path: 'login',
         loadComponent: () =>
@@ -61,13 +61,18 @@ export const routes: Routes = [
       {
         path: 'register',
         loadComponent: () =>
-          import('./Pages/Auth/register/register.component').then((m) => m.RegisterComponent)
+          import('./Pages/Auth/register/register.component').then(
+            (m) => m.RegisterComponent
+          )
       }
     ]
   },
+  // Fallback 404
   {
     path: '**',
     loadComponent: () =>
-      import('./Pages/notfound/notfound.component').then((m) => m.NotfoundComponent)
+      import('./Pages/notfound/notfound.component').then(
+        (m) => m.NotfoundComponent
+      )
   }
 ];

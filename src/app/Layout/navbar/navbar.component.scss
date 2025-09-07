@@ -1,0 +1,18 @@
+*{
+    color: rgb(28, 21, 57);
+}
+.navbar {
+  padding: 0.8rem 1.2rem;
+  background-color: aliceblue;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+  transition: color 0.1s ease-in-out;
+}
+
+.nav-link.active {
+  color: #31232b !important; /* أزرق bootstrap */
+  font-weight: 600;
+}
