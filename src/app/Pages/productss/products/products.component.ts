@@ -1,4 +1,6 @@
-import { Component, signal, Signal } from '@angular/core';
+import { Component, inject, signal, Signal } from '@angular/core';
+import { NavbarComponent } from "../../../Layout/navbar/navbar.component";
+import { CountService } from '../core/Services/count.service';
 
 @Component({
   selector: 'app-products',
@@ -7,11 +9,12 @@ import { Component, signal, Signal } from '@angular/core';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-count = signal(0);
+  private _countService = inject(CountService);
+count =this._countService.count;
  Show(){
-  this.count.update(n => n + 1);
+ this._countService.Show();
 }
  reset() {
-    this.count.set(0);
+  this._countService.reset();
   }
 }
