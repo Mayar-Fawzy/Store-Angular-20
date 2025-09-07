@@ -32,5 +32,13 @@
 
       <app-sidebar [name]="name()"></app-sidebar>
     </div>
-  </div>
+  </div> 
+   <h3 class="text-center my-3">Drag And Drop Numbers</h3>
+ 
+  
+  <div cdkDropList cdkDropListOrientation="mixed" class="example-list d-flex justify-content-between align-items-center mt-5 mb-3" (cdkDropListDropped)="drop($event)">
+  @for (item of items; track item) {
+    <div class="example-box" cdkDrag>{{item}}</div>
+  }</div>
 </div>
+
