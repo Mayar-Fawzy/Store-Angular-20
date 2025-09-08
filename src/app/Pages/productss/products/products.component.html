@@ -1,0 +1,18 @@
+<h1>To-Do List</h1>
+
+<input [(ngModel)]="newTask" placeholder="اكتب مهمة" />
+<button (click)="add()">إضافة</button>
+
+<ul>
+  @for (todo of todos$ | async; track todo.id) {
+  <li>
+    {{ todo.title }}
+    <button (click)="remove(todo.id)">❌</button>
+  </li>
+  }
+</ul>
+<div>
+  <p>Current language: {{ lang() }}</p>
+  <button (click)="switchTo('en')">English</button>
+  <button (click)="switchTo('ar')">العربية</button>
+</div>
