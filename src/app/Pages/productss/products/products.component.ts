@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
 
@@ -23,6 +23,13 @@ interface AppState {
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
+  NewSignal=signal("");
+  Addtext(){
+    this.NewSignal.set("Hello from signal");
+  }
+  removeText(){
+    this.NewSignal.set("");
+  }
   newTask = '';
 
   private store = inject(Store<AppState>);
