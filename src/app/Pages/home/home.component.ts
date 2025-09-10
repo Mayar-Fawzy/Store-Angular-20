@@ -3,9 +3,10 @@ import { SidebarComponent } from '../../Layout/sidebar/sidebar.component';
 import { CountService } from '../productss/core/Services/count.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import {CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
+import { Highlight } from '../../Shared/directives/highlight';
 @Component({
   selector: 'app-home',
-  imports: [SidebarComponent ,CdkDropList, CdkDrag, ReactiveFormsModule],
+  imports: [SidebarComponent ,CdkDropList, Highlight ,CdkDrag, ReactiveFormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
